@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ 
+  <mapper namespace="com.practice.project.dao.IGetDao">
+
+ <select id="selectName" parameterType="String" resultType="name">
+
+  <![CDATA[
+
+   SELECT UserName
+
+         FROM userTb1
+
+         WHERE UserName = #{name}
+
+        ]]>
+
+ </select>
+ 
+  <select id="selectUser" parameterType="String" resultType="user">
+
+  <![CDATA[
+
+   SELECT *
+
+         FROM userTb1
+
+         WHERE UserID = #{userID}
+
+        ]]>
+
+ </select>
+
+ <update id="modifyUser" parameterType="user"> 
+ 
+  <![CDATA[
+
+  update userTb1 
+  
+  SET UserID = #{userID}, UserName = #{userName}, UserAge = #{userAge}, Phone = #{phone}, Comment = #{comment}
+
+  WHERE UserID = #{userID};
+
+   ]]>
+
+ </update>
+ 
+ <delete id="removeUser" parameterType="String">
+
+  <![CDATA[
+
+   DELETE
+
+   FROM userTb1
+  
+   WHERE UserID = #{userID}
+
+        ]]>
+
+ </delete>
+ 
+ <select id="getUserList" resultType="user">
+
+  <![CDATA[
+
+   SELECT *
+
+         FROM userTb1
+
+        ]]>
+
+ </select>
+ 
+ <insert id="addfriendUser" parameterType="frienduser">
+
+ <![CDATA[
+
+  insert into friend(ID,Friend_ID) values 
+
+  (#{id},#{friend_id});
+
+   ]]>
+
+ </insert>
+ 
+ <select id="getfriendSearch" parameterType="String" resultType="user">
+
+  <![CDATA[
+
+   SELECT userTb1.UserID, userTb1.UserName, userTb1.UserAge, userTb1.Phone, userTb1.Comment
+
+         FROM friend inner join userTb1 
+
+         ON friend.Friend_ID = userTb1.UserID 
+        
+         WHERE friend.ID = #{id};
+
+        ]]>
+
+ </select>
+
+ 
+
+  </mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration
+
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+
+ <typeAliases>
+
+  <typeAlias alias="name" type="com.practice.project.model.Name"/>
+  <typeAlias alias="user" type="com.practice.project.model.User"/>
+  <typeAlias alias="userauth" type="com.practice.project.model.UserAuth"/>
+  <typeAlias alias="frienduser" type="com.practice.project.model.FriendUser"/>
+
+ </typeAliases>
+
+ 
+</configuration>

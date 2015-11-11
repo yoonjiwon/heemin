@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ 
+  <mapper namespace="com.practice.project.dao.AuthGetDao">
+
+ <insert id="addregisterUser" parameterType="userauth">
+
+ <![CDATA[
+
+  insert into session1(ID,Password,Session_State) values 
+  
+  (#{id},#{password},'ON');
+
+   ]]>
+
+ </insert>
+ 
+ <insert id="addUser" parameterType="user">
+
+ <![CDATA[
+
+  insert into userTb1(UserID,UserName,UserAge,Phone,Comment) values 
+
+  (#{userID},#{userName},#{userAge},#{phone},#{comment});
+
+   ]]>
+
+ </insert>
+ 
+ <select id="selectUserlogCheck" parameterType="userauth" resultType="String">
+
+ <![CDATA[
+
+  select count(*) from session1 WHERE ID = #{id} and Password = #{password};
+
+   ]]>
+
+ </select>
+ 
+  <update id="modifyloginUser" parameterType="userauth"> 
+ 
+  <![CDATA[
+
+  update session1
+  
+  SET Session_State = 'ON'
+
+  WHERE ID = #{id} and Password = #{password};
+
+   ]]>
+
+ </update>
+ 
+  <update id="modifylogoutUser" parameterType="userauth"> 
+ 
+  <![CDATA[
+
+  update session1
+  
+  SET Session_State = 'OFF'
+
+  WHERE ID = #{id} and Password = #{password};
+
+   ]]>
+
+ </update>
+ 
+  <select id="sessionCheck" parameterType="String" resultType="String">
+
+  <![CDATA[
+
+   SELECT Session_State
+
+         FROM session1
+
+         WHERE ID = #{id}
+
+        ]]>
+
+ </select>
+ 
+ 
+  </mapper>
