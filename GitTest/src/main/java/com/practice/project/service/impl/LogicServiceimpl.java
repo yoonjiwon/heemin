@@ -35,7 +35,7 @@ public class LogicServiceimpl implements LogicService {
 		return user;
 	}
 
-	@Override
+  /*  @Override
 	public STAT addUser(User user) {
 		// TODO Auto-generated method stub
 		
@@ -45,6 +45,8 @@ public class LogicServiceimpl implements LogicService {
 			return stat;
 		
 	}
+	
+	*/
 
 	@Override
 	public STAT modifyUser(User user) {
@@ -56,7 +58,8 @@ public class LogicServiceimpl implements LogicService {
 			return stat;
 		
 	}
-
+	
+	
 	@Override
 	public STAT removeUser(String userID) {
 		// TODO Auto-generated method stub
@@ -89,12 +92,11 @@ public class LogicServiceimpl implements LogicService {
 	}
 
 	@Override
-	public FriendList getfriendSearch(String id) {
+	public FriendList getfriendSearch(String userID) {
 		// TODO Auto-generated method stub
 		FriendList friendlist = new FriendList();
-		friendlist.setFriendList(mapper.getfriendSearch(id));
-		friendlist.setCount(friendlist.getFriendList().size()); //list row ¼ö ¼¼ÁÖ±â
-		friendlist.setStat("success");
+		friendlist.setFriendList(mapper.getfriendSearch(userID));
+		friendlist.setCount(friendlist.getFriendList().size()); //list row ï¿½ï¿½ ï¿½ï¿½ï¿½Ö±ï¿½
 		return friendlist;
 	}
 

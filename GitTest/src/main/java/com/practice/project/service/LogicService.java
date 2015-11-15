@@ -13,7 +13,7 @@ public interface LogicService {
 	
 	public User getUser(String id);
 	
-	public STAT addUser(User user);
+	//public STAT addUser(User user);
 	
 	public STAT modifyUser(User user);
 	
@@ -23,5 +23,5 @@ public interface LogicService {
 	
 	public STAT addfriendUser(FriendUser frienduser);
 	
-	public FriendList getfriendSearch(String id);
+	public FriendList getfriendSearch(String userID);
 }

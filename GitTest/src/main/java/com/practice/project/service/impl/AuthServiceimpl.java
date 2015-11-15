@@ -53,7 +53,7 @@ public class AuthServiceimpl implements AuthService {
 		mapper.modifyloginUser(userauth);
 		stat.setStat("success");
 		}else{
-			throw new CustomException("id³ª password°¡ ¾Ë¸ÂÁö ¾Ê½À´Ï´Ù.");
+			throw new CustomException("idë‚˜ passwordê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		}
 		
 		return stat;
@@ -69,7 +69,7 @@ public class AuthServiceimpl implements AuthService {
 		mapper.modifylogoutUser(userauth);
 		stat.setStat("success");
 		}else{
-			throw new CustomException("ÀÌ»óÇÕ´Ï´Ù!");
+			throw new CustomException("ï¿½Ì»ï¿½ï¿½Õ´Ï´ï¿½!");
 		}
 		return stat;
 	}

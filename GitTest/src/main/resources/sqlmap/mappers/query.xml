@@ -97,7 +97,7 @@
 
          ON friend.Friend_ID = userTb1.UserID 
         
-         WHERE friend.ID = #{id};
+         WHERE friend.ID = #{userID};
 
         ]]>
 

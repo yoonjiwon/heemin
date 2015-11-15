@@ -27,20 +27,20 @@ public class CommonInterceptor implements HandlerInterceptor  {
 	  
 	  if(id!=null&&id.length()>0){
 
-	   System.out.println("id°¡ ³ÎÀÌ ¾Æ´Õ´Ï´Ù! Á¤»ó·ÎÁ÷!");
+	   System.out.println("idê°€ ìˆìŠµë‹ˆë‹¤.");
 	   
 	   String state = mapper.sessionCheck(id);
 
 	   if(state.equals("OFF")){
-		   throw new CustomException("login »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.");
+		   throw new CustomException("login ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.");
 	   }
 	  }
 
 	  else if(id==null||id.length()==0){
 
-	   System.out.println("id°¡ ³ÎÀÔ´Ï´Ù! ¿¡·¯Ã³¸®!");
+	   System.out.println("idê°€ ì—†ìŠµë‹ˆë‹¤!");
 
-	   throw new CustomException("id°¡ ºñ¾îÀÖ½À´Ï´Ù");
+	   throw new CustomException("idê°€ ì—†ìŠµë‹ˆë‹¤.");
 
 	  }
 

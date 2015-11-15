@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.practice.project.model.FriendList;
 import com.practice.project.model.FriendUser;
 import com.practice.project.model.STAT;
-import com.practice.project.model.UserList;
 import com.practice.project.service.LogicService;
 
 @RestController
@@ -31,10 +30,11 @@ public class FriendController {
 	}
 	
 	@RequestMapping(value = "/friend/friendsearch", method = RequestMethod.GET)
-	public FriendList addfriendSearch(HttpServletRequest request, HttpServletResponse response, @RequestParam(value="id") String id)
+	public FriendList addfriendSearch(HttpServletRequest request, HttpServletResponse response, @RequestParam(value="userID") String userID)
 	{
 		FriendList friendlist = new FriendList();
-		friendlist = logicservice.getfriendSearch(id);
+		friendlist.setStat("success");
+		friendlist = logicservice.getfriendSearch(userID);
 		return friendlist;
 		
 	}

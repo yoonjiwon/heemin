@@ -13,7 +13,7 @@ public interface IGetDao {
 	
 	public User selectUser(String userID);
 	
-	public void addUser(User user);
+	//public void addUser(User user);
 	
 	public void modifyUser(User user);
 	
@@ -23,7 +23,7 @@ public interface IGetDao {
 	
 	public void addfriendUser(FriendUser frienduser);
 	
-	public List<User> getfriendSearch(String id);
+	public List<User> getfriendSearch(String userID);
 
 
 }
